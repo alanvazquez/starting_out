@@ -1,20 +1,24 @@
-puts "Enter the amount budgeted for the month: "
-budget = gets.chomp.to_f
+def collect_rainfall_data
+  puts "Enter the number of years: "
+  years = gets.chomp.to_i
 
-total_expenses = 0
+  total_inches = 0
+  total_months = years * 12
 
-loop do
-  puts "Enter an expense amount (or type 'done' to finish): "
-  input = gets.chomp
+  (1..years).each do |year|
+    (1..12).each do |month|
+      puts "Enter inches of rainfall for Year #{year}, Month #{month}: "
+      inches = gets.chomp.to_f
+      total_inches += inches
+    end
+  end
 
-  break if input.downcase == 'done'
+  average_rainfall = total_inches / total_months
 
-  expense = input.to_f
-  total_expenses += expense
+  puts "\nResults:"
+  puts "Number of months: #{total_months}"
+  puts "Total inches of rainfall: #{total_inches}"
+  puts "Average rainfall per month: #{average_rainfall.round(2)} inches"
 end
 
-difference = total_expenses - budget
-
-puts "Budget: $#{budget}"
-puts "Total Expenses: $#{total_expenses}"
-puts "Difference: $#{difference}"
+collect_rainfall_data
