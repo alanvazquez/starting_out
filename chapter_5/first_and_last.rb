@@ -1,6 +1,5 @@
 def ask_for_names
-  puts "Enter a series of names."
-  puts "Enter numbers. Type 0 to quit and display the first name alphabetically and the last one alphabetically."
+  puts "Enter a series of names. Type 'done' to quit and display the first name alphabetically and the last one alphabetically."
   list_of_names = []
   loop do
     name = gets.chomp
@@ -11,8 +10,9 @@ def ask_for_names
 end
 
 def display_names(name)
-  puts "The first name is #{name.sort}"
-  puts "The smallest number is #{name.first}"
+  sorted_names = name.sort
+  puts "The first alphabetically name is #{sorted_names.first}"
+  puts "The last alphabetically_name is #{sorted_names.last}"
 end
 
 # Program Starts
