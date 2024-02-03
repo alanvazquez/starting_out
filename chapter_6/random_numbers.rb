@@ -7,4 +7,4 @@ end
 
 generate_random_number
 
-puts rand(1, 10)
+puts rand(1..10)
