@@ -17,8 +17,12 @@ def determine_outcome(user_selection, cpu_selection)
     puts "It's a draw"
   else puts "CPU wins"
   end
-
 end
+
+  def show_selections(user_selection, cpu_selection)
+    puts "User chooses #{user_selection}"
+    puts "CPU chooses #{cpu_selection}"
+  end
 
 # Program Starts
 key_to_continue = "y"
@@ -27,6 +31,7 @@ loop do
   puts "Choose rock, paper or scissors"
   user_selection = gets.chomp.to_s.downcase
   cpu_selection = generate_cpu_selection
+  show_selections(user_selection, cpu_selection)
   determine_outcome(user_selection, cpu_selection)
   puts "Do you want to play again? Press 'y' for yes and 'n' for no"
   key_to_continue = gets.chomp.to_s
