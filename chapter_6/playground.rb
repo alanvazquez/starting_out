@@ -1,16 +1,15 @@
-# Variable declarations
-a, b, c = 0.0, 0.0, 0.0
+def ask_for_number
+  puts "Please enter a number to check if it's prime: "
+end
 
-# Get the length of side A.
-puts "Enter the length of side A."
-a = gets.chomp.to_f
+def is_prime(num)
+  return false if (num < 2)
 
-# Get the length of side B.
-puts "Enter the length of side B."
-b = gets.chomp.to_f
+  (2..(num - 1)).each do |n|
+    return false if num % n == 0
+  end
 
-# Calculate the length of the hypotenuse.
-c = Math.sqrt(a**2 + b**2)
+  true
+end
 
-# Display the length of the hypotenuse.
-puts "The length of the hypotenuse is #{c}"
+puts is_prime(17)
