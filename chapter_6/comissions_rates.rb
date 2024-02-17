@@ -4,8 +4,8 @@ def ask_for_sales
 end
 
 def ask_for_advanced_pay
-  puts "Enter the amount of advanced pay or "
-  puts "type 0 if no advancedpay was given"
+  puts "Enter the amount of advanced payment or "
+  puts "type 0 if no advanced payment was given"
   gets.chomp.to_f
 end
 
@@ -22,3 +22,28 @@ def determine_comission_rate(sales)
     rate = 0.18
   end
 end
+
+def calculate_pay(sales, comission_rate, advanced_pay)
+  comission = sales * comission_rate
+  net_pay = comission - advanced_pay
+end
+
+def determine_reimburse(pay)
+  if pay < 0
+    puts "The salesperson must reimburse $#{pay.abs} to the company."
+  else
+    puts "Nothing has to be reimbursed to the company."
+  end
+end
+
+def print_pay(pay)
+  puts "The comission is $#{pay}"
+end
+
+# Program Starts
+sales = ask_for_sales()
+advanced_pay = ask_for_advanced_pay()
+comission_rate = determine_comission_rate(sales)
+pay = calculate_pay(sales, comission_rate, advanced_pay)
+print_pay(pay)
+determine_reimburse(pay)
