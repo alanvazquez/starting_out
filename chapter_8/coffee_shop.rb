@@ -5,9 +5,13 @@ end
 
 def ask_worked_hours
   puts "Enter worked hours"
-  employees= []
+  gets.chomp.to_f
+  employees= ["alan", "lele"]
   employees.each do |employee|
   puts "Hi " + employee
 end
-  gets.chomp.to_f
+
 end
+
+
+ask_worked_hours()
