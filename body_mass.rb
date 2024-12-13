@@ -13,7 +13,7 @@ def calculate_body_mass(weight, height)
 end
 
 def display_values(body_mass)
-  puts "Your Body Mass Index is #{body_mass.round(0)}."
+  puts "Your Body Mass Index today is #{body_mass.round(0)}."
 end
 
 #Program Starts
